@@ -12,3 +12,13 @@ class ExchangeRateScraperItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
+
+
+class ReutersItem(scrapy.Item):
+    from_currency = scrapy.Field()
+    to_currency = scrapy.Field()
+    date = scrapy.Field()
+    open_rate = scrapy.Field()
+    close_rate = scrapy.Field()
+    high_rate = scrapy.Field()
+    low_rate = scrapy.Field()
