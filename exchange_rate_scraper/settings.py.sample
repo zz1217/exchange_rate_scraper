@@ -65,7 +65,8 @@ COOKIES_ENABLED = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'exchange_rate_scraper.pipelines.ExchangeRateScraperPipeline': 300,
+    #'exchange_rate_scraper.pipelines.ExchangeRateScraperPipeline': 300,
+    'exchange_rate_scraper.pipelines.MySQLStoreReutersPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -88,3 +89,11 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# start of mysql database configure setting
+MYSQL_HOST = '127.0.0.1'
+MYSQL_PORT = 3306
+MYSQL_DBNAME = 'db name'
+MYSQL_USER = 'db user'
+MYSQL_PWD = 'password'
+# end of mysql database configure setting
