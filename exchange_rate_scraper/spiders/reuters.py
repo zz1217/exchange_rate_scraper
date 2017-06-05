@@ -84,9 +84,9 @@ class ReutersSpider(scrapy.Spider):
             
             sql += ','.join(params)
                 
-            print '\n============\n'
-            print sql
-            print '\n============\n'
+            #print '\n============\n'
+            #print sql
+            #print '\n============\n'
 
             conn.execute(sql)
         
