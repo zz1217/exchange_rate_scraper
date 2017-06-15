@@ -22,3 +22,16 @@ class ReutersItem(scrapy.Item):
     close_rate = scrapy.Field()
     high_rate = scrapy.Field()
     low_rate = scrapy.Field()
+    
+class OandaItem(scrapy.Item):
+     from_currency = scrapy.Field()
+     to_currency = scrapy.Field()
+     date = scrapy.Field()
+     value  = scrapy.Field()
+
+class XeItem(scrapy.Item):
+     from_currency = scrapy.Field()
+     to_currency = scrapy.Field()
+     date = scrapy.Field()
+     from_to_value  = scrapy.Field()
+     to_from_value  = scrapy.Field()
