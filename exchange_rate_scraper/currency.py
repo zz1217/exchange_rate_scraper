@@ -3,12 +3,13 @@
 import itertools
 
 ALL_CURRENCY = (
-    'GBP', 'USD', 'EUR', 'ALL', 'AOA', 'ARS', 'AUD', 
-    'BHD', 'BDT', 'BYR', 'BGN', 'BOB', 'BRL', 'BND', 
-    'CAD', 'CLP', 'CNY', 'COP', 'CDF', 'CRC', 'HRK', 'CZK', 
-    'DKK', 'EGP', 'FJD', 'HKD', 'HUF', 'ISK', 'INR', 'IDR', 'ILS', 'JPY', 
-    'KRW', 'KWD', 'LVL', 'LTL', 'MYR', 'MXN', 'NZD', 'NOK', 'PKR', 'PHP', 'PLN', 
-    'RUB', 'SAR', 'SGD', 'ZAR', 'SEK', 'CHF', 'THB', 'TRY', 'AED', 'TWD', 'UAH'
+    'AED', 'KWD',
+    #'GBP', 'USD', 'EUR', 'ALL', 'AOA', 'ARS', 'AUD', 
+    #'BHD', 'BDT', 'BYR', 'BGN', 'BOB', 'BRL', 'BND', 
+    #'CAD', 'CLP', 'CNY', 'COP', 'CDF', 'CRC', 'HRK', 'CZK', 
+    #'DKK', 'EGP', 'FJD', 'HKD', 'HUF', 'ISK', 'INR', 'IDR', 'ILS', 'JPY', 
+    #'KRW', 'KWD', 'LVL', 'LTL', 'MYR', 'MXN', 'NZD', 'NOK', 'PKR', 'PHP', 'PLN', 
+    #'RUB', 'SAR', 'SGD', 'ZAR', 'SEK', 'CHF', 'THB', 'TRY', 'AED', 'TWD', 'UAH'
 )
 
 class Currency(object):

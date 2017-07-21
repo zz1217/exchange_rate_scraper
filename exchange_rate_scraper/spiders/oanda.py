@@ -6,7 +6,6 @@ import itertools
 import scrapy
 from exchange_rate_scraper.items import OandaItem
 from exchange_rate_scraper import currency
-
 from twisted.enterprise import adbapi
 import MySQLdb
 import MySQLdb.cursors
@@ -15,7 +14,6 @@ class OandaSpider(scrapy.Spider):
     name = 'oanda'
     allowed_domains = ['oanda.com']
   
-
     url_tpl = "https://www.oanda.com/lang/cns/currency/converter/update?base_currency_0=%(to_currency)s&quote_currency=%(from_currency)s&end_date=%(date)s&view=details&id=4&action=D&"
 
     urls = []
