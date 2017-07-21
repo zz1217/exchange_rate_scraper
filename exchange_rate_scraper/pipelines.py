@@ -50,11 +50,11 @@ class MySQLStoreReutersPipeline(object):
         return d
         
     def _do_upinsert(self, conn, item, spider):
-        print '\n=============\n'
-        print """
+        #print '\n=============\n'
+        #print """
         #    UPDATE reuters SET high=%s, low=%s, open=%s, close=%s WHERE from_currency = '%s' AND to_currency = '%s' AND date = '%s'
         #    """% (item['high_rate'], item['low_rate'], item['open_rate'], item['close_rate'], item['from_currency'], item['to_currency'], item['date'])
-        print '\n=============\n'
+        #print '\n=============\n'
         
         # 奇怪，用逗号就不行。。。
         conn.execute(

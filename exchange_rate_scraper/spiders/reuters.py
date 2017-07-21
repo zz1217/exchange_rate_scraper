@@ -96,7 +96,7 @@ class ReutersSpider(scrapy.Spider):
             yield scrapy.Request(self.urls[i], meta=self.meta[i])
 
     def parse(self, response):
-        resp = Selector(response=response, type="xml").re('"open":"[^\d]+([\d\.]+)","close":"([\d\.]+)","high":"([\d\.]+)","low":"([\d\.]+)","date":"(\d{4}-\d{2}-\d{2})"')
+        resp = Selector(response=response, type="xml").re('"open":"(?:[^\d]+)?([\d\.]+)","close":"(?:[^\d]+)?([\d\.]+)","high":"(?:[^\d]+)?([\d\.]+)","low":"(?:[^\d]+)?([\d\.]+)","date":"(\d{4}-\d{2}-\d{2})"')
         
         for i in np.array(resp).reshape(len(resp)/5, 5):
             open_rate, close_rate, high_rate, low_rate, date = i
