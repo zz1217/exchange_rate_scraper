@@ -50,11 +50,11 @@ class MySQLStoreReutersPipeline(object):
         return d
         
     def _do_upinsert(self, conn, item, spider):
-        #print '\n=============\n'
-        #print """
+        print '\n=============\n'
+        print """
         #    UPDATE reuters SET high=%s, low=%s, open=%s, close=%s WHERE from_currency = '%s' AND to_currency = '%s' AND date = '%s'
         #    """% (item['high_rate'], item['low_rate'], item['open_rate'], item['close_rate'], item['from_currency'], item['to_currency'], item['date'])
-        #print '\n=============\n'
+        print '\n=============\n'
         
         # 奇怪，用逗号就不行。。。
         conn.execute(
@@ -71,11 +71,7 @@ class MySQLStoreReutersPipeline(object):
     def _handle_error(self, failue, item, spider):
         log.err(failue)
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 38a4fb6603c93e9ea8593e48747876ea8aa08225
 class MySQLStoreOandaPipeline(object):
     def __init__(self, dbpool):
         self.dbpool = dbpool
@@ -98,16 +94,9 @@ class MySQLStoreOandaPipeline(object):
 
     def process_item(self, item, spider):
         # 忽略比目标开始时间早的数据
-<<<<<<< HEAD
-        #date_fmt = '%Y-%m-%d'
-        #if datetime.strptime(item['date'], date_fmt) < datetime.strptime(spider.meta[0]['from_date'], date_fmt):
-        
-		#	raise DropItem("Date too old %s" % item)
-=======
         # date_fmt = '%Y-%m-%d'
         # if datetime.strptime(item['date'], date_fmt) < datetime.strptime(spider.meta[0]['from_date'], date_fmt):
         #     raise DropItem("Date too old %s" % item)
->>>>>>> 38a4fb6603c93e9ea8593e48747876ea8aa08225
         
         d = self.dbpool.runInteraction(self._do_upinsert, item, spider)
         d.addErrback(self._handle_error, item, spider)
@@ -135,8 +124,7 @@ class MySQLStoreOandaPipeline(object):
 
     def _handle_error(self, failue, item, spider):
         log.err(failue)
-<<<<<<< HEAD
-=======
+
 
 class MySQLStoreXePipeline(object):
     def __init__(self, dbpool):
@@ -190,4 +178,3 @@ class MySQLStoreXePipeline(object):
 
     def _handle_error(self, failue, item, spider):
         log.err(failue)
->>>>>>> 38a4fb6603c93e9ea8593e48747876ea8aa08225
